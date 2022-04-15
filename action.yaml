@@ -17,4 +17,3 @@ runs:
   env:
     INPUT_CALENDAR_URL: ${{ inputs.deadline }}
     INPUT_GITHUB_REPO_NAME: ${{ inputs.event_path }}
-    INPUT_SECRET: ${{ inputs.secret }}
