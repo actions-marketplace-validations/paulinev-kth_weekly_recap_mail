@@ -1,8 +1,8 @@
-name: 'DD2482, Weekly mail'
-description: 'Automaticly send a summary email with the program, the schedule of the next week and the student's task summary'
+name: DD2482, Weekly mail
+description: Automaticly send a summary email with the program, the schedule of the next week and the student's task summary
 inputs:
   githubName:
-    description: 'Name of the github repo'
+    description: Name of the github repo
     required: true
     default: 'KTH/devops-course'
   calendarUrl:
@@ -14,6 +14,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    INPUT_CALENDAR_URL: ${{ inputs.deadline }}
-    INPUT_GITHUB_REPO_NAME: ${{ inputs.event_path }}
-    INPUT_SECRET: ${{ inputs.secret }}
+    INPUT_CALENDAR_URL: ${{ inputs.githubName }}
+    INPUT_GITHUB_REPO_NAME: ${{ inputs.calendarUrl }}
