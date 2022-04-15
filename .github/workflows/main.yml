@@ -1,6 +1,8 @@
 name: DD2482, Weekly mail
 #description: Automaticly send a summary email with the program, the schedule of the next week and the student's task summary
-on: push
+on:
+  schedule:
+    - cron: '15 12 * * *'
   
 jobs:
   weekly-mails:

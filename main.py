@@ -239,8 +239,6 @@ def get_common_mail_text(next_week_info) :
         schedule_txt += _get_event_text(event)+"\n"
     program = _get_week_program_text(next_week_info[0])
     mail = f"Hello,\nHere is the summary for next week DevOps course\n\nProgram of {program}\nSchedule:\n{schedule_txt}"
-    with open("mail.txt", 'w') as f :
-        f.write(mail)
 
     return mail
 
