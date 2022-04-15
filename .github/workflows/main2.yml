@@ -1,0 +1,27 @@
+name: DD2482, Weekly mail
+#description: Automaticly send a summary email with the program, the schedule of the next week and the student's task summary
+on: push
+  
+jobs:
+  weekly-mails:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v2.2.1
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      # Set timezone to Europe/Stockholm
+
+      # Runs a single command using the runners shell
+      - name: Create and send weekly mail
+        run: python main.py
