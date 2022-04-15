@@ -27,7 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Update the statistic issue
-        env:
-          INPUT_CALENDAR_URL: ${{ inputs.githubName }}
-          INPUT_GITHUB_REPO_NAME: ${{ inputs.calendarUrl }}
         run: python main.py
