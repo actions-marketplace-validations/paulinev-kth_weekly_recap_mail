@@ -1,5 +1,10 @@
 name: DD2482, Weekly mail
 description: Automaticly send a summary email with the program, the schedule of the next week and the student's task summary
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main]
 inputs:
   githubName:
     description: Name of the github repo
