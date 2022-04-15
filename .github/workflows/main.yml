@@ -2,7 +2,7 @@ name: DD2482, Weekly mail
 #description: Automaticly send a summary email with the program, the schedule of the next week and the student's task summary
 on:
   schedule:
-  - cron: '23 * * * *'
+  - cron: '0,10,20,30,40,50 * * * *'
   
 jobs:
   weekly-mails:
