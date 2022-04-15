@@ -30,4 +30,4 @@ jobs:
         env:
           INPUT_CALENDAR_URL: ${{ inputs.githubName }}
           INPUT_GITHUB_REPO_NAME: ${{ inputs.calendarUrl }}
-        run: python .main.py
+        run: python main.py
