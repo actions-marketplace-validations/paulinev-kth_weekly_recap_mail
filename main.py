@@ -11,7 +11,7 @@ These informations are found thanks to :
 """
 
 import requests
-import base64
+import base64,os
 import icalendar
 import datetime
 import pytz
@@ -26,9 +26,13 @@ logging.basicConfig(filename="automatic_mail.log",
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
-readme_url = "https://api.github.com/repos/KTH/devops-course/contents/README.md"
-calendar_url = "https://www.kth.se/social/course/DD2482/calendar/ical/?lang=en"
-search_url = "https://api.github.com/search/issues?q=statistics+in:title%20repo:kth/devops-course"
+github_repo_name = os.getenv("INPUT_GITHUB_NAME")
+github_name = "KTH/devops-course"
+readme_url = f"https://api.github.com/repos/{github_repo_name}/contents/README.md"
+calendar_url = os.getenv("INPUT_CALENDAR_URL")
+search_url = f"https://api.github.com/search/issues?q=statistics+in:title%20repo:{github_repo_name}"
+
+
 
 ######################
 ### README analyze ###
@@ -273,7 +277,6 @@ def send_individual_mail(tasks_per_students, task_deadlines, general_mail) :
             if student == "paulinev" :
                 _send_email(student, f"{general_mail}\n{text_task_deadline}")
    
-
 def main() :
     paragraphs = get_readme_info()
     task_deadlines = get_task_deadline(paragraphs)
@@ -284,7 +287,6 @@ def main() :
     common_mail = get_common_mail_text(next_week_info)
     tasks_per_students = get_student_task_info()
     send_individual_mail(tasks_per_students, task_deadlines,common_mail)
-
 
 if __name__ == "__main__":
     main()
