@@ -1,0 +1,14 @@
+Hello,
+Here is the summary for next week DevOps course
+
+Program of Week 5: Infrastructure as Code (https://github.com/KTH/devops-course/issues/2) (April 19)
+- Preparatory material: 
+     -Best practices for container compliance: https://increment.com/containers/container-compliance/ 
+     -Building on-dem staging environments: https://increment.com/containers/on-dem-staging-environments-kubernetes/ 
+     -Gang of eight: a defect taxonomy for infrastructure as code scripts: http://www.chrisparnin.me/pdf/GangOfEight.pdf  
+     -SaaS Vs PaaS Vs IaaS: https://tms-outsource.com/blog/posts/saas-vs-paas-vs-iaas/
+- Student presentations, demonstrations and katacodas
+- Deadline task 2
+
+Schedule:
+- Lecture on Tuesday 19th April from 09h00 to 12h00 in room V1
