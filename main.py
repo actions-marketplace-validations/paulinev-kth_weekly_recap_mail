@@ -29,8 +29,8 @@ logger.setLevel(logging.DEBUG)
 github_repo_name = 'KTH/devops-course'
 github_name = "KTH/devops-course"
 readme_url = f"https://api.github.com/repos/{github_repo_name}/contents/README.md"
-calendar_url = os.getenv("INPUT_CALENDAR_URL")
-search_url = "https://www.kth.se/social/course/DD2482/calendar/ical/?lang=en"
+calendar_url = "https://www.kth.se/social/course/DD2482/calendar/ical/?lang=en"
+search_url = "https://api.github.com/search/issues?q=statistics+in:title%20repo:{github_repo_name}"
 
 
 
