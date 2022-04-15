@@ -1,4 +1,4 @@
-name: 'DD2482: Weekly mail'
+name: 'DD2482, Weekly mail'
 description: 'Automaticly send a summary email with the program, the schedule of the next week and the student's task summary'
 inputs:
   githubName:
