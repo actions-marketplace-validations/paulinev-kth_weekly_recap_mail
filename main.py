@@ -26,11 +26,11 @@ logging.basicConfig(filename="automatic_mail.log",
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
-github_repo_name = os.getenv("INPUT_GITHUB_NAME")
+github_repo_name = 'KTH/devops-course'
 github_name = "KTH/devops-course"
 readme_url = f"https://api.github.com/repos/{github_repo_name}/contents/README.md"
 calendar_url = os.getenv("INPUT_CALENDAR_URL")
-search_url = f"https://api.github.com/search/issues?q=statistics+in:title%20repo:{github_repo_name}"
+search_url = "https://www.kth.se/social/course/DD2482/calendar/ical/?lang=en"
 
 
 
