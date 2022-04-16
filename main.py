@@ -215,7 +215,8 @@ def _get_event_text(event) :
     date = event['dtstart'].strftime('%A %dth %B')
     ending_hour = event['dtend'].strftime('%Hh%M')
     starting_hour = event['dtstart'].strftime('%Hh%M')
-    text = f"- {cat} on {date} from {starting_hour} to {ending_hour} in room {event['location']}"
+    location = event['location'].replace("\\", "")
+    text = f"- {cat} on {date} from {starting_hour} to {ending_hour} in room {location}"
     return text
 
 def _get_week_program_text(program) :
@@ -254,6 +255,7 @@ def _send_email(receiver, mail) :
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
         server.login(sender_email, password)
         message = f"From: {sender_email}\nTo: {receiver_email}\nSubject: {subject}\n\n{mail}"
+        message = message.encode('utf-8')
         server.sendmail(sender_email,receiver_email,message)
 
 def send_individual_mail(tasks_per_students, task_deadlines, general_mail) :
@@ -279,7 +281,6 @@ def send_individual_mail(tasks_per_students, task_deadlines, general_mail) :
 def main() :
     paragraphs = get_readme_info()
     task_deadlines = get_task_deadline(paragraphs)
-    list_events =get_course_calendar()
     data_weeks = get_week_information(paragraphs)
     list_events =get_course_calendar()
     next_week_info = get_next_week_info(data_weeks,list_events)
