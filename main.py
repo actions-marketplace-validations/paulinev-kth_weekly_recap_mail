@@ -263,7 +263,6 @@ def send_individual_mail(tasks_per_students, task_deadlines, general_mail) :
         text_task_deadline = "\nTask summary\n"
         if task_number >= len(task_deadlines) :
             text_task_deadline +="You have registered all your tasks! Congrats."
-            print(task_number, text_task_deadline)
             continue
         next_deadline = task_deadlines[task_number+1]
         text_optional = " "
@@ -275,8 +274,7 @@ def send_individual_mail(tasks_per_students, task_deadlines, general_mail) :
             plural =""
         text_task_deadline += f"You have {task_number} task{plural} registered and your next{text_optional}task is {date}"
         for student in list_students :
-            if student == "paulinev" :
-                _send_email(student, f"{general_mail}\n{text_task_deadline}")
+            _send_email(student, f"{general_mail}\n{text_task_deadline}")
    
 def main() :
     paragraphs = get_readme_info()
