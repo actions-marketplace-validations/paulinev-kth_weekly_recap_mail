@@ -8,13 +8,18 @@ runs:
   # Steps represent a sequence of tasks that will be executed as part of the job
   steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: checkout repo content
+      uses: actions/checkout@v3 # checkout the repository content to github runner.
+      with:
+        repository: paulinev-kth/weekly_recap_mail
+        path: weekly_mail_tmp
 
     - name: Install dependencies
-      run: python -m pip install -r requirements.txt
+      run: python -m pip install -r ./weekly_mail_tmp/requirements.txt
       shell: bash
 
 
     # Runs a single command using the runners shell
     - name: Create and send weekly mail
-      run: python main.py
+      run: python ./weekly_mail_tmp/main.py
       shell: bash
