@@ -17,3 +17,18 @@ The action executes the following steps
 - builds the indivdual mail for each student and sends it
 
 This action extracts all the information by matching regular expressions
+
+## How to use it 
+
+To use it simply copy paste this code, with the latest version 
+```yaml
+name: Weekly report
+on:
+  push:
+  schedule:
+    - cron: '0,30 * * * *'
+jobs:
+  weekly-mail:
+    runs-on: ubuntu-latest    
+    steps:     
+      - uses: paulinev-kth/weekly_recap_mail@v1```
